@@ -1,15 +1,16 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../API/constatnt";
-import "./Basics.css";
+import { axiosInstance, axiosPrivateInstance } from "../../API/axiosInstance";
+import "./AxiosInstance.css";
 
-const Basics = () => {
+const AxiosInstance = () => {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const getPosts = async () => {
     try {
-      const { data } = await axios.get(`${BASE_URL}/posts`);
+      // const { data } = await axios.get(`${BASE_URL}/posts`);
+      // const { data } = await axiosInstance.get("/posts");
+      const { data } = await axiosPrivateInstance.get("/posts");
       setPosts(data.reverse());
     } catch (error) {
       console.log("error while fetching posts", error);
@@ -24,12 +25,14 @@ const Basics = () => {
       userId: 1,
     };
     try {
-      const { data } = await axios.post(`${BASE_URL}/posts`, postData, {
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "custom-header": "test",
-        },
-      });
+      // const { data } = await axios.post(`${BASE_URL}/posts`, postData, {
+      //   headers: {
+      //     "Content-type": "application/json; charset=UTF-8",
+      //     "custom-header": "test",
+      //   },
+      // });
+      // const { data } = await axiosInstance.post("/posts", postData);
+      const { data } = await axiosPrivateInstance.post("/posts", postData);
       setPost("");
       alert("Post added successfully");
       setPosts((prev) => [data, ...prev]);
@@ -45,7 +48,10 @@ const Basics = () => {
   }, []);
 
   return (
-    <div className="basics_container">
+    <div className="axios_instance_container">
+      <h1 style={{ textAlign: "center" }}>
+        Welcome to Axios Tutorial (Axios Instance)
+      </h1>
       <p className="header">POSTS</p>
       <textarea
         placeholder="Add Post"
@@ -67,4 +73,4 @@ const Basics = () => {
   );
 };
 
-export default Basics;
+export default AxiosInstance;

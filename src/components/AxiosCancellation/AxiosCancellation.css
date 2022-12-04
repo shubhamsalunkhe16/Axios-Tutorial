@@ -1,0 +1,30 @@
+.axios_instance_container .header{
+    background-color: skyblue;
+          padding: 10px 20px;
+          text-align: center;
+}
+
+.axios_instance_container .post_input{
+    margin: 0 auto;
+    width: 60%;
+    display: block;
+    font-size: 16px;
+}
+
+.axios_instance_container .post_input{
+    margin: 0 auto;
+    width: 60%;
+    display: block;
+    font-size: 16px;
+}
+
+.axios_instance_container .add_post_btn{
+    display: block;
+    margin: 15px auto;
+}
+
+.axios_instance_container .post_card{
+    background-color: yellow;
+    padding: 10px 20px;
+    text-align: center;
+}

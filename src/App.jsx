@@ -1,11 +1,17 @@
 import React from "react";
-import Intro from "./components/Basics";
+import Basics from "./components/Basics/Basics";
+import AxiosInstance from "./components/AxiosInstance/AxiosInstance";
+import AxiosInterceptor from "./components/AxiosInterceptor/AxiosInterceptor";
+import AxiosCancellation from "./components/AxiosCancellation/AxiosCancellation";
+// import "./API/global";
 
 const App = () => {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Welcome to Axios Tutorial</h1>
-      <Intro />
+      {/* <Basics /> */}
+      {/* <AxiosInstance /> */}
+      {/* <AxiosInterceptor /> */}
+      <AxiosCancellation />
     </div>
   );
 };
